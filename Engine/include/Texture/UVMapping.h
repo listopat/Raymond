@@ -28,3 +28,21 @@ public:
     static std::shared_ptr<PlanarMap> createPlanarMap();
     virtual UV operator() (const Tuple &point);
 };
+
+class CubicMap : public UVMapping, public std::enable_shared_from_this<CubicMap> {
+public:
+    enum FACE {
+        LEFT, RIGHT, FRONT, BACK, UP, DOWN
+    };
+
+    CubicMap() {};
+    static std::shared_ptr<CubicMap> createCubicMap();
+    virtual UV operator() (const Tuple& point);
+    CubicMap::FACE faceFromPoint(const Tuple& point);
+    UV UVFront(const Tuple& point);
+    UV UVBack(const Tuple& point);
+    UV UVLeft(const Tuple& point);
+    UV UVRight(const Tuple& point);
+    UV UVUp(const Tuple& point);
+    UV UVDown(const Tuple& point);
+};

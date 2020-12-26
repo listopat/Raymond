@@ -6,8 +6,11 @@
 #include <Hit.h>
 #include <vector>
 
+
 class World {
 public:
+    static const int MAX_REFLECTION_BOUNCES = 4;
+
     World();
     static World makeDefaultWorld();
 
@@ -24,11 +27,13 @@ public:
     std::shared_ptr<Shape> getObject(int index) const;
 
     std::vector<Intersection> intersects(const Ray &r) const;
-    Color shadeHit(Hit hit) const;
+    Color shadeHit(Hit hit, int remainingBounces) const;
     bool isShadowed(const Tuple &lightPosition, const Tuple &point) const;
     double intensityAt(const PointLight &light, const Tuple &point) const;
     double intensityAt(const AreaLight &light, const Tuple &point) const;
-    Color colorAt(const Ray &r) const;
+    Color reflectedColor(Hit hit, int remainingBounces) const;
+    Color refractedColor(Hit hit, int remainingBounces) const;
+    Color colorAt(const Ray& r, int remainingBounces = MAX_REFLECTION_BOUNCES) const;
 
 private:
     std::vector<PointLight> pointLights;

@@ -5,6 +5,14 @@ std::shared_ptr<Sphere> Sphere::createSphere()
     return std::make_shared<Sphere>(Sphere());
 }
 
+std::shared_ptr<Sphere> Sphere::createGlassSphere()
+{
+    std::shared_ptr<Sphere> result = std::make_shared<Sphere>(Sphere());
+    result->getMaterial().transparency = 1.0;
+    result->getMaterial().refractiveIndex = 1.5;
+    return result;
+}
+
 bool Sphere::operator==(const Shape &other) const
 {
     return true;

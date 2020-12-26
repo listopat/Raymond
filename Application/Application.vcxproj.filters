@@ -13,10 +13,27 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Resource Files\Scenes">
+      <UniqueIdentifier>{6827f481-3faa-4650-966b-c4c02748c5fd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scenes\soft_shadows.json">
+      <Filter>Resource Files\Scenes</Filter>
+    </None>
+    <None Include="Scenes\skybox1.json">
+      <Filter>Resource Files\Scenes</Filter>
+    </None>
+    <None Include="Scenes\skybox2.json">
+      <Filter>Resource Files\Scenes</Filter>
+    </None>
+    <None Include="Scenes\various.json">
+      <Filter>Resource Files\Scenes</Filter>
+    </None>
   </ItemGroup>
 </Project>

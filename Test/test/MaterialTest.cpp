@@ -3,7 +3,10 @@
 #include <Material.h>
 #include <Shapes/Sphere.h>
 
-TEST_CASE("Materials working properly", "[material]") {
+TEST_CASE("Lighting working properly", "[material]") {
+    Material m = Material::Material();
+    Tuple position = Tuple::point(0, 0, 0);
+
     SECTION("The default material") {
         Material m = Material::Material();
         REQUIRE((m.color == Color::Color(1.0, 1.0, 1.0)));
@@ -12,11 +15,6 @@ TEST_CASE("Materials working properly", "[material]") {
         REQUIRE(m.specular == 0.9);
         REQUIRE(m.shininess == 200.0);
     }
-}
-
-TEST_CASE("Lighting working properly", "[material]") {
-    Material m = Material::Material();
-    Tuple position = Tuple::point(0, 0, 0);
 
     SECTION("Lighting with the eye between the light and the surface") {
         Tuple eyev = Tuple::vector(0, 0, -1);
@@ -93,7 +91,7 @@ TEST_CASE("Lighting working properly", "[material]") {
         AreaLight light = AreaLight(intensity, corner, v1, 2, v2, 2, false);
 
         std::shared_ptr<Sphere> s1 = Sphere::createSphere();
-        s1->setMaterial(Material(Color(1, 1, 1), 0.1, 0.9, 0, 200));
+        s1->setMaterial(Material(Color(1, 1, 1), 0.1, 0.9, 0, 200, 0, 0, 1));
 
         Tuple eye = Tuple::point(0, 0, 5);
         
@@ -108,5 +106,14 @@ TEST_CASE("Lighting working properly", "[material]") {
         normalv = Tuple::vector(pt[0], pt[1], pt[2]);
         result = s1->getMaterial().lighting(Matrix::getIdentity4x4(), light, pt, eyev, normalv, 1.0);
         REQUIRE(result == Color(0.6232, 0.6232, 0.6232));
+    }
+
+    SECTION("Reflectivity for the default material") {
+        REQUIRE(m.reflective == 0.0);
+    }
+
+    SECTION("Transparency and Refractive Index for the default material") {
+        REQUIRE(m.transparency == 0.0);
+        REQUIRE(m.refractiveIndex == 1.0);
     }
 }

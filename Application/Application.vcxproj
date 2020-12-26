@@ -78,7 +78,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(SolutionDir)Engine\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)Libraries\nlohmann;$(SolutionDir)Engine\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -147,6 +147,12 @@
     <ProjectReference Include="..\Engine\Engine.vcxproj">
       <Project>{97cb1851-70ba-4870-a425-0d52a3449ace}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scenes\skybox2.json" />
+    <None Include="Scenes\various.json" />
+    <None Include="Scenes\soft_shadows.json" />
+    <None Include="Scenes\skybox1.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

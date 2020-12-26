@@ -1,4 +1,5 @@
 #include <Canvas.h>
+#include <algorithm>
 
 Canvas::Canvas(int w, int h) : width(w) , height(h) {
     grid = std::unique_ptr<Color[]>(new Color[w * h]);

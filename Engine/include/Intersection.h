@@ -16,17 +16,8 @@ public:
 
     bool operator==(const Intersection &other) const;
 
-    struct Precomps {
-        bool inside;
-        double t;
-        std::shared_ptr<const Shape> object;
-        Tuple point;
-        Tuple eyev;
-        Tuple normalv;
-    };
-
     static std::optional<Intersection> hit(const std::vector<Intersection> &intersections);
-    Hit prepareHit(const Ray &ray) const;
+    Hit prepareHit(const Ray &ray, const std::vector<Intersection>& intersections) const;
 
 private:
     double t;

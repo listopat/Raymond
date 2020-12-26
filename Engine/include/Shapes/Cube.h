@@ -2,10 +2,9 @@
 #include <Shapes/Shape.h>
 #include <memory>
 
-class Sphere : public Shape , public std::enable_shared_from_this<Sphere> {
+class Cube : public Shape, public std::enable_shared_from_this<Cube> {
 public:
-    static std::shared_ptr<Sphere> createSphere();
-    static std::shared_ptr<Sphere> createGlassSphere();
+    static std::shared_ptr<Cube> createCube();
 
     bool operator==(const Shape &other) const override;
 
@@ -25,5 +24,7 @@ private:
     Matrix inverseTransform;
     Material material;
 
-    Sphere();
+    Cube();
+
+    std::pair<double, double> checkAxis(double origin, double direction) const;
 };

@@ -8,10 +8,10 @@ class Material {
 public:
     std::shared_ptr<Texture> texture;
     Color color;
-    double ambient, diffuse, specular, shininess;
+    double ambient, diffuse, specular, shininess, reflective, transparency, refractiveIndex;
 
     Material();
-    Material(const Color &c, double a, double d, double sp, double sh);
+    Material(const Color &c, double a, double d, double sp, double sh, double rfv, double t, double ri);
 
     bool operator==(const Material &other) const;
 

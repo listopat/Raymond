@@ -37,14 +37,16 @@ std::optional<Intersection> Intersection::hit(const std::vector<Intersection> &i
     return (result == nullptr) ? std::nullopt : std::optional<Intersection>{*result};
 }
 
-Hit Intersection::prepareHit(const Ray & ray) const
+Hit Intersection::prepareHit(const Ray & ray, const std::vector<Intersection>& intersections) const
 {
     Tuple point = Ray::position(ray, t);
     Tuple eyev = -ray.direction;
     Tuple normalv = object->normalAt(point);
+    Tuple reflectv = Tuple::reflect(ray.direction, normalv);
     bool inside;
 
-    if (Tuple::dot(normalv, eyev) < 0) {
+    if (Tuple::dot(normalv, eyev) < 0) 
+    {
         inside = true;
         normalv = -normalv;
     }
@@ -52,5 +54,47 @@ Hit Intersection::prepareHit(const Ray & ray) const
         inside = false;
     }
 
-    return Hit(*this, inside, point, eyev, normalv);
+    double n1, n2;
+    n1 = n2 = 0;
+
+    std::vector<std::shared_ptr<const Shape>> containers;
+    for (const Intersection& i : intersections)
+    {
+        if (t == i.getT())
+        {
+            if (containers.empty())
+            {
+                n1 = 1.0;
+            }
+            else
+            {
+                n1 = containers.back()->getMaterial().refractiveIndex;
+            }
+        }
+
+        std::vector<std::shared_ptr<const Shape>>::iterator index = std::find(containers.begin(), containers.end(), i.getObject());
+        if (index != containers.end())
+        {
+            containers.erase(index);
+        }
+        else
+        {
+            containers.push_back(i.getObject());
+        }
+
+        if (t == i.getT()) 
+        {
+            if (containers.empty())
+            {
+                n2 = 1.0;
+            }
+            else
+            {
+                n2 = containers.back()->getMaterial().refractiveIndex;
+            }
+            break;
+        }
+    }
+
+    return Hit(*this, inside, point, eyev, normalv, reflectv, n1, n2);
 }

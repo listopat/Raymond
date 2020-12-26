@@ -102,11 +102,17 @@
     <ClCompile Include="src\Texture\UVImage.cpp">
       <Filter>Source Files\Texture</Filter>
     </ClCompile>
-    <ClCompile Include="src\PPMInterface.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\SceneParser.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ImageIOInterface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Shapes\Cube.cpp">
+      <Filter>Source Files\Shapes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -179,14 +185,20 @@
     <ClInclude Include="include\Texture\UVImage.h">
       <Filter>Header Files\Texture</Filter>
     </ClInclude>
-    <ClInclude Include="include\PPMInterface.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\Lights\Light.h">
       <Filter>Header Files\Lights</Filter>
     </ClInclude>
     <ClInclude Include="include\SceneParser.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Engine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ImageIOInterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Shapes\Cube.h">
+      <Filter>Header Files\Shapes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
