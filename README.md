@@ -8,7 +8,7 @@
 ## Overview
 ### Notable features
 * Sphere, plane & cube primitives.
-* Reflections and refraction.
+* Reflection and refraction.
 * Soft shadows.
 * Built-in patterns (e.g. Checkers, Gradient).
 * Texture mapping.
