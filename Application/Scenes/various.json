@@ -1,0 +1,178 @@
+{
+  "camera": {
+    "height": 1600,
+    "width": 900,
+    "fov": 1.152,
+    "from": [ -2.6, 1.5, -3.9 ],
+    "to": [ -0.6, 1, -0.8 ],
+    "up": [ 0, 1, 0 ]
+  },
+  "lights": {
+    "pointLights": [
+      {
+        "position": [ -4.9, 4.9, -1 ],
+        "intensity": [ 1, 1, 1 ]
+      }
+    ]
+  },
+  "textures": [
+  ],
+  "materials": [
+    {
+      "name": "bg1",
+      "color": [ 0.654, 0.184, 0.254 ],
+      "ambient": 0.1,
+      "diffuse": 0.9,
+      "specular": 0.5,
+      "reflective": 0,
+      "shininess": 200,
+      "transparency": 0,
+      "refractiveIndex": 1
+    },
+    {
+      "name": "bg2",
+      "color": [ 0.184, 0.466, 0.654 ],
+      "ambient": 0.1,
+      "diffuse": 0.9,
+      "specular": 0.5,
+      "reflective": 0,
+      "shininess": 200,
+      "transparency": 0,
+      "refractiveIndex": 1
+    },
+    {
+      "name": "fg1",
+      "color": [ 0.737, 0.141, 0.203 ],
+      "ambient": 0.1,
+      "diffuse": 0.9,
+      "specular": 0.2,
+      "reflective": 0,
+      "shininess": 5,
+      "transparency": 0,
+      "refractiveIndex": 1
+    },
+    {
+      "name": "fg2",
+      "color": [ 0.2, 0, 0 ],
+      "ambient": 0,
+      "diffuse": 0.4,
+      "specular": 0.9,
+      "reflective": 0.9,
+      "shininess": 300,
+      "transparency": 0.9,
+      "refractiveIndex": 1.5
+    },
+    {
+      "name": "fg3",
+      "color": [ 0, 0, 0.2 ],
+      "ambient": 0,
+      "diffuse": 0.4,
+      "specular": 0.9,
+      "reflective": 0.9,
+      "shininess": 300,
+      "transparency": 0.9,
+      "refractiveIndex": 1.5
+    },
+    {
+      "name": "wall",
+      "color": [ 0.8, 0.8, 0.8 ],
+      "ambient": 0.15,
+      "diffuse": 0.6,
+      "specular": 0,
+      "reflective": 0.3,
+      "shininess": 200,
+      "transparency": 0,
+      "refractiveIndex": 1
+    },
+    {
+      "name": "floor",
+      "color": [ 0.45, 0.45, 0.45 ],
+      "ambient": 0.1,
+      "diffuse": 0.9,
+      "specular": 0.9,
+      "reflective": 0,
+      "shininess": 200,
+      "transparency": 0,
+      "refractiveIndex": 1
+    },
+    {
+      "name": "ceilling",
+      "color": [ 0.1, 0.1, 0.1 ],
+      "ambient": 0.3,
+      "diffuse": 0.9,
+      "specular": 0,
+      "reflective": 0,
+      "shininess": 200,
+      "transparency": 0,
+      "refractiveIndex": 1
+    }
+  ],
+  "shapes": {
+    "spheres": [
+      {
+        "translation": [ 4.6, 0.4, 1 ],
+        "scaling": [ 0.4, 0.4, 0.4 ],
+        "material": "bg1"
+      },
+      {
+        "translation": [ 4.7, 0.3, 0.4 ],
+        "scaling": [ 0.3, 0.3, 0.3 ],
+        "material": "bg2"
+      },
+      {
+        "translation": [ -1, 0.5, 4.5 ],
+        "scaling": [ 0.5, 0.5, 0.5 ],
+        "material": "bg2"
+      },
+      {
+        "translation": [ -1.7, 0.3, 4.7 ],
+        "scaling": [ 0.3, 0.3, 0.3 ],
+        "material": "bg1"
+      },
+      {
+        "translation": [ -0.6, 1, 0.6 ],
+        "material": "fg1"
+      },
+      {
+        "translation": [ 0.6, 0.7, -0.6 ],
+        "scaling": [ 0.7, 0.7, 0.7 ],
+        "material": "fg2"
+      },
+      {
+        "translation": [ -0.7, 0.5, -0.8 ],
+        "scaling": [ 0.5, 0.5, 0.5 ],
+        "material": "fg3"
+      }
+  ],
+    "planes": [
+      {
+        "rotation": [ 0, 0.31415, 0 ],
+        "material": "floor"
+      },
+      {
+        "translation": [ 0, 5, 0 ],
+        "material": "ceilling"
+      },
+      {
+        "translation": [-5, 0, 0 ],
+        "rotation": [ 0, 0, 1.5708 ],
+        "material": "wall"
+      },
+      {
+        "translation": [ 5, 0, 0 ],
+        "rotation": [ 0, 0, 1.5708 ],
+        "material": "wall"
+      },
+      {
+        "translation": [ 0, 0, 5 ],
+        "rotation": [ 1.5708, 0, 0 ],
+        "material": "wall"
+      },
+      {
+        "translation": [ 0, 0, -5 ],
+        "rotation": [ 1.5708, 0, 0 ],
+        "material": "wall"
+      }
+    ]
+  }
+}

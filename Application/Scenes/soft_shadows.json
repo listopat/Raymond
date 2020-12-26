@@ -1,0 +1,81 @@
+{
+  "camera": {
+    "height": 1600,
+    "width": 900,
+    "fov": 0.8,
+    "from": [ -3, 1, 2.5 ],
+    "to": [ 0, 0.5, 0 ],
+    "up": [ 0, 1, 0 ]
+  },
+  "lights": {
+    "pointLights": [
+    ],
+    "areaLights": [
+      {
+        "corner": [ -1, 2, 4 ],
+        "uvec": [ 2, 0, 0 ],
+        "vvec": [ 0, 2, 0 ],
+        "usteps": 10,
+        "vsteps": 10,
+        "jitter": true,
+        "intensity": [ 1.5, 1.5, 1.5 ]
+      }
+    ]
+  },
+  "textures": [
+  ],
+  "materials": [
+    {
+      "name": "sphere1",
+      "color": [ 1, 0, 0 ],
+      "ambient": 0.1,
+      "diffuse": 0.6,
+      "specular": 0.35,
+      "reflective": 0.3,
+      "shininess": 200,
+      "transparency": 0,
+      "refractiveIndex": 1
+    },
+    {
+      "name": "sphere2",
+      "color": [ 0.5, 0.5, 1 ],
+      "ambient": 0.1,
+      "diffuse": 0.6,
+      "specular": 0.35,
+      "reflective": 0.3,
+      "shininess": 200,
+      "transparency": 0,
+      "refractiveIndex": 1
+    },
+    {
+      "name": "plane1",
+      "color": [ 1, 1, 1 ],
+      "ambient": 0.025,
+      "diffuse": 0.67,
+      "specular": 0.3,
+      "reflective": 0,
+      "shininess": 200,
+      "transparency": 0,
+      "refractiveIndex": 1
+    }
+  ],
+  "shapes": {
+    "spheres": [
+      {
+        "translation": [ 0.5, 0.5, 0],
+        "scaling": [ 0.5, 0.5, 0.5 ],
+        "material": "sphere1"
+      },
+      {
+        "translation": [ -0.25, 0.33, 0],
+        "scaling": [ 0.33, 0.33, 0.33 ],
+        "material": "sphere2"
+      }
+  ],
+    "planes": [
+      {
+        "material": "plane1"
+      }
+    ]
+  }
+}
