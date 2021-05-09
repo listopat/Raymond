@@ -1,4 +1,4 @@
-# Ray Tracer
+# Raymond
 ### :sunny: 3D raytracer on a CPU built from scratch with minimal dependencies for educational purposes.
 
 ## Renders
